@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pedro Henrique — Portfólio (Next.js)
 
-## Getting Started
+Portfólio de desenvolvedor construído com **Next.js 14 (App Router)**, **TypeScript** e **Tailwind CSS**, inspirado no layout de referência (tema escuro, acentos neon, seção hero com "hotspots" interativos).
 
-First, run the development server:
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura de arquivos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx        # layout raiz, fontes (Space Grotesk, Inter, JetBrains Mono) e metadata
+  page.tsx           # monta a página (Header, Hero, About, Projects, Contact, Footer)
+  globals.css        # tokens de cor via Tailwind + classes utilitárias (.card-surface, .chip, .eyebrow)
 
-## Learn More
+components/
+  Header.tsx               # navegação fixa com destaque da seção ativa (scroll spy)
+  Hero.tsx                  # seção inicial: headline, CTAs, redes sociais
+  WorkspaceIllustration.tsx # ilustração SVG original (mesa/monitores) com cards flutuantes (hotspots) ligando às seções
+  About.tsx                 # seção "Sobre", grade de competências
+  Projects.tsx               # seção "Projetos" com filtro por categoria (client component)
+  ProjectCard.tsx            # card individual de projeto
+  Contact.tsx                 # seção de contato / CTA final
+  Footer.tsx
 
-To learn more about Next.js, take a look at the following resources:
+data/
+  projects.ts        # fonte única dos projetos (mobile, website, RPA, ETL) — edite aqui para adicionar/editar projetos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+public/
+  favicon.svg         # marca "PH" em SVG
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Sobre as "imagens"
 
-## Deploy on Vercel
+Em vez de fotos externas (que exigiriam licenciamento/hospedagem), o hero e os cards de projeto usam **ilustração SVG própria** e **gradientes por categoria** gerados em código — assim o projeto roda sem nenhuma dependência de imagem externa. Se preferir usar fotos reais:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Coloque os arquivos em `public/` (ex: `public/projects/app-financeflow.png`).
+2. Troque o bloco de `thumbnail` em `components/ProjectCard.tsx` por um `<Image src="/projects/..." ... />` do `next/image`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adicionando um novo projeto
+
+Edite `data/projects.ts` e adicione um novo objeto ao array `projects`, definindo `category` como `"mobile" | "website" | "rpa" | "etl"`. O filtro e o card já se atualizam automaticamente.
+
+## Stack
+
+- Next.js 14 (App Router) + TypeScript
+- Tailwind CSS (tokens de cor customizados em `tailwind.config.ts`)
+- lucide-react (ícones)

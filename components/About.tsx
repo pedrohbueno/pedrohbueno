@@ -19,12 +19,12 @@ const SKILLS = [
     description:
       "Pipelines de extração, transformação e carga que unificam dados de múltiplas fontes para decisões melhores.",
   },
-  {
-    icon: Boxes,
-    title: "Integração de Sistemas",
-    description:
-      "Conexão entre ERPs, CRMs e serviços de terceiros via APIs, webhooks e filas de mensageria.",
-  },
+  // {
+  //   icon: Boxes,
+  //   title: "Integração de Sistemas",
+  //   description:
+  //     "Conexão entre ERPs, CRMs e serviços de terceiros via APIs, webhooks e filas de mensageria.",
+  // },
 ];
 
 export default function About() {

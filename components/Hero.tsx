@@ -1,13 +1,9 @@
-import { 
-  // Github, 
-  // Linkedin, 
-  Mail, 
-  ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 import WorkspaceIllustration from "./WorkspaceIllustration";
 
 const SOCIALS = [
-  // { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  // { icon: Github, href: "https://github.com", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com", label: "GitHub" },
   { icon: Mail, href: "mailto:contato@pedrohenrique.dev", label: "E-mail" },
 ];
 

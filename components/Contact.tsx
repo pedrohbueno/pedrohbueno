@@ -1,7 +1,4 @@
-import { Mail, 
-  // Github, 
-  // Linkedin, 
-  ArrowRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
 
 const CHANNELS = [
   {
@@ -10,18 +7,18 @@ const CHANNELS = [
     value: "contato@pedrohenrique.dev",
     href: "mailto:contato@pedrohenrique.dev",
   },
-  // {
-  //   icon: Linkedin,
-  //   label: "LinkedIn",
-  //   value: "/in/pedrohenrique",
-  //   href: "https://linkedin.com",
-  // },
-  // {
-  //   icon: Github,
-  //   label: "GitHub",
-  //   value: "/pedrohenrique",
-  //   href: "https://github.com",
-  // },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "/in/pedrohenrique",
+    href: "https://linkedin.com",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "/pedrohenrique",
+    href: "https://github.com",
+  },
 ];
 
 export default function Contact() {
