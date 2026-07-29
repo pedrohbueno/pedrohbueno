@@ -2,9 +2,9 @@ import { Github, Linkedin, Mail, ArrowRight } from "lucide-react";
 import WorkspaceIllustration from "./WorkspaceIllustration";
 
 const SOCIALS = [
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Mail, href: "mailto:contato@pedrohenrique.dev", label: "E-mail" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/pedro-henrique-bueno-dos-santos-4646102a3/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/pedrohbueno", label: "GitHub" },
+  { icon: Mail, href: "mailto:pedrohbueno.contato@gmail.com", label: "E-mail" },
 ];
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
         <h1 className="mt-2 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
           Pedro
           <br />
-          Henrique
+          Henrique Bueno
           <span className="text-purple">.</span>
         </h1>
 

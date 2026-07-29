@@ -1,24 +1,30 @@
-import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowRight, Phone } from "lucide-react";
 
 const CHANNELS = [
   {
     icon: Mail,
     label: "E-mail",
-    value: "contato@pedrohenrique.dev",
-    href: "mailto:contato@pedrohenrique.dev",
+    value: "pedrohbueno.contato@gmail.com",
+    href: "mailto:pedrohbueno.contato@gmail.com",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "/in/pedrohenrique",
-    href: "https://linkedin.com",
+    value: "Pedro Henrique Bueno Dos Santos",
+    href: "https://www.linkedin.com/in/pedro-henrique-bueno-dos-santos-4646102a3/",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "/pedrohenrique",
-    href: "https://github.com",
+    value: "Pedro H. Bueno",
+    href: "https://github.com/pedrohbueno",
   },
+  // {
+  //   icon: Phone,
+  //   label: "Telefone",
+  //   value: "+55 (19)9999=9999",
+  //   href: "tel:+55 (19)9999=9999",
+  // },
 ];
 
 export default function Contact() {
@@ -36,7 +42,7 @@ export default function Contact() {
         </p>
 
         <a
-          href="mailto:contato@pedrohenrique.dev"
+          href="mailto:pedrohbueno.contato@gmail.com"
           className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple to-blue px-6 py-3 text-sm font-medium text-white transition-transform duration-200 hover:scale-[1.03]"
         >
           Enviar mensagem
