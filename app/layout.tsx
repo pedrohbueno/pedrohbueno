@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const display = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
