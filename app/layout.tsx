@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.css"; 
 
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Especialista em automação de processos (RPA), desenvolvimento backend e integração de sistemas. Transformo desafios complexos em soluções eficientes.",
   keywords: [
-    "Pedro Henrique",
+    "Pedro Henrique Bueno Dos Santos",
     "desenvolvedor de software",
     "RPA",
     "ETL",
@@ -49,6 +49,8 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="bg-bg text-ink font-body antialiased selection:bg-purple/30 selection:text-white">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
