@@ -46,9 +46,9 @@ export default function Header() {
         scrolled ? "bg-bg/80 backdrop-blur-md border-b border-border-soft" : ""
       }`}
     >
-      <div className="section-shell flex h-20 items-center justify-between">
+      <div className="section-shell flex h-20 items-center gap-24">
         <a
-          href="#inicio"
+          href="/"
           className="font-display text-xl font-bold tracking-tight bg-gradient-to-r from-purple-soft via-purple to-blue bg-clip-text text-transparent"
         >
           PH
@@ -75,13 +75,6 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-
-        <a
-          href="#contato"
-          className="hidden rounded-full border border-border px-5 py-2 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-purple-soft md:block"
-        >
-          Vamos conversar
-        </a>
       </div>
     </header>
   );

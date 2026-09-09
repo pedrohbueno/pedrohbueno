@@ -61,7 +61,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <a
-          href={project.href ?? "#"}
+          href={"projects?project=" + project.title}
           className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors group-hover:text-purple-soft"
         >
           Ver detalhes
