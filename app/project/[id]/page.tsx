@@ -2,14 +2,16 @@ import Header from "@/components/Header";
 import ProjectOverview from "@/components/projects/ProjectOverview";
 import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
+import { notFound } from "next/navigation";
 
-export default function ProjectsPage({
-  searchParams,
+export default async function ProjectsPage({
+  params,
 }: {
-  searchParams: { project?: string };
+  params: Promise<{id: string}>;  
 }) {
+  const { id } = await params;
   const project = projects.find(
-    p => p.title === searchParams.project
+    p => p.id === id
   );
 
   if (!project) {
@@ -20,7 +22,7 @@ export default function ProjectsPage({
     <>
       <Header />
       <main>
-        <ProjectOverview projectName={project.title} />
+        <ProjectOverview project={project} />
       </main>
       <Footer />
     </>
