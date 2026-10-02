@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { projects, categoryMeta, type ProjectCategory } from "@/data/projects";
+import { use, useMemo, useState } from "react";
+import { getProjects } from "@/lib/projects";
+import { categoryMeta, type ProjectCategory } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 
 type FilterValue = ProjectCategory | "todos";
@@ -14,7 +15,10 @@ const FILTERS: { value: FilterValue; label: string }[] = [
   { value: "etl", label: categoryMeta.etl.label },
 ];
 
+const projectsPromise = getProjects();
+
 export default function Projects() {
+  const projects = use(projectsPromise);
   const [filter, setFilter] = useState<FilterValue>("todos");
 
   const filteredProjects = useMemo(
@@ -31,7 +35,7 @@ export default function Projects() {
         <div>
           <p className="eyebrow">Projetos</p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl">
-            Soluções que já entregaram resultado.
+            Soluções desenvolvidas.
           </h2>
         </div>
 

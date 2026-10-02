@@ -49,8 +49,8 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="bg-bg text-ink font-body antialiased selection:bg-purple/30 selection:text-white">
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics />
+        <SpeedInsights /> */}
       </body>
     </html>
   );
