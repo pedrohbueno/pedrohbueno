@@ -8,11 +8,10 @@ import { useEffect, useState } from "react";
 export default function Header() {
   const [active, setActive] = useState("#inicio");
   const [scrolled, setScrolled] = useState(false);
-
+  var pathname = usePathname()
   useEffect(() => {
     const sections = NAV_ITEMS.map((item) =>
-
-      document.querySelector(usePathname() === "/" ? item.href : item.href.replace('/', ''))
+      document.querySelector(item.href.replace('/', ''))
     ).filter(Boolean) as Element[];
 
     const observer = new IntersectionObserver(
@@ -35,7 +34,7 @@ export default function Header() {
       observer.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <header
@@ -56,7 +55,7 @@ export default function Header() {
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link
-                  href={item.href}
+                  href={pathname === "/" ? item.href : "/" + item.href}
                   className={`relative pb-1 font-body text-sm transition-colors duration-200 ${
                     active === item.href
                       ? "text-ink"
