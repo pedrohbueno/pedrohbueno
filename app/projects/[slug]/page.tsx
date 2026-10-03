@@ -7,14 +7,17 @@ import ProjectOverview from '@/components/projects/ProjectOverview';
  
 export const revalidate = 3600;
  
-type Props = { params: { slug: string } }; // no Next 15, params é uma Promise
+type Props = {
+  params: Promise<{ slug: string }>;
+};
  
 export async function generateStaticParams() {
   return (await getAllSlugs()).map((slug) => ({ slug }));
 }
  
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
   if (!project) return {};
   return {
     title: `${project.title} — Pedro Henrique`,
@@ -24,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
  
 export default async function ProjectPage({ params }: Props) {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
   if (!project) notFound();
  
   return (
