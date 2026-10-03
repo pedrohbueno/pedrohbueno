@@ -47,14 +47,14 @@ export type Database = {
           category_slug: string
           created_at: string
           demo_url: string | null
-          description: string | null
+          description: string
           github_repo: string
-          id: number
+          id: string
           published: boolean
           slug: string
           sort_order: number | null
           stack_extra: string[]
-          title: string | null
+          title: string
         }
         Insert: {
           category: string
@@ -63,7 +63,7 @@ export type Database = {
           demo_url?: string | null
           description?: string | null
           github_repo: string
-          id?: number
+          id?: string
           published?: boolean
           slug: string
           sort_order?: number | null
@@ -77,7 +77,7 @@ export type Database = {
           demo_url?: string | null
           description?: string | null
           github_repo?: string
-          id?: number
+          id?: string
           published?: boolean
           slug?: string
           sort_order?: number | null

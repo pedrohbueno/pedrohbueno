@@ -21,7 +21,7 @@ export function toProject(
       sortOrder: c.sort_order,
     },
     stack: mergeStack(repo?.languages ?? {}, row.stack_extra),
-    metric: row.metric ?? undefined,
+    // metric: row.metric ?? undefined,
     demoUrl: safeHttpUrl(row.demo_url),
     createdAt: row.created_at,
     github: repo
