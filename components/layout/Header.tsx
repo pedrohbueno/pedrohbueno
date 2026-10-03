@@ -1,13 +1,9 @@
 "use client";
 
+import { NAV_ITEMS } from "@/lib/site";
+import Link from "next/dist/client/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const NAV_ITEMS = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Contato", href: "#contato" },
-];
 
 export default function Header() {
   const [active, setActive] = useState("#inicio");
@@ -15,7 +11,8 @@ export default function Header() {
 
   useEffect(() => {
     const sections = NAV_ITEMS.map((item) =>
-      document.querySelector(item.href)
+
+      document.querySelector(usePathname() === "/" ? item.href : item.href.replace('/', ''))
     ).filter(Boolean) as Element[];
 
     const observer = new IntersectionObserver(
@@ -47,18 +44,18 @@ export default function Header() {
       }`}
     >
       <div className="section-shell flex h-20 items-center gap-24">
-        <a
+        <Link
           href="/"
           className="font-display text-xl font-bold tracking-tight bg-gradient-to-r from-purple-soft via-purple to-blue bg-clip-text text-transparent"
         >
           PH
-        </a>
+        </Link>
 
         <nav aria-label="Navegação principal" className="hidden md:block">
           <ul className="flex items-center gap-9">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className={`relative pb-1 font-body text-sm transition-colors duration-200 ${
                     active === item.href
@@ -70,7 +67,7 @@ export default function Header() {
                   {active === item.href && (
                     <span className="absolute -bottom-0.5 left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-purple to-blue" />
                   )}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
