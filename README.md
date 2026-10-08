@@ -1,16 +1,25 @@
-## Hi there 👋
+# Pedro Henrique Bueno
 
-<!--
-**pedrohbueno/pedrohbueno** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Desenvolvedor de Software focado em automação de processos, desenvolvimento backend e integração de sistemas.
 
-Here are some ideas to get you started:
+Transformo processos manuais em soluções inteligentes através de desenvolvimento de software, RPA, ETL e arquitetura de sistemas escaláveis.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Sobre Mim
+
+Atuo na interseção entre desenvolvimento de software e automação, buscando eliminar tarefas repetitivas e aumentar a eficiência operacional através da tecnologia.
+
+### Áreas de Atuação
+
+- Backend Development
+- Process Automation (RPA)
+- ETL & Data Engineering
+- API Development
+- System Integration
+- Process Optimization
+
+### Tecnologias
+
+```text
+Java • Spring Boot • Python • Node.js
+React • Next.js • MySQL • PostgreSQL
+Pandas • Docker • REST APIs
